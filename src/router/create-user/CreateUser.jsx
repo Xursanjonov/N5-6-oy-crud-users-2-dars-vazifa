@@ -26,8 +26,6 @@ function CreateUser() {
   const handaleSubmit = (e) => {
     e.preventDefault();
     let createTime = new Date()
-    let date = new Date().toISOString().split('T')[1].substring(0, 5) + 5;
-    console.log(date);
     let newUser = {
       id: createTime.getTime(),
       name, profession, password, email, username, age: +age, gender,
@@ -36,7 +34,6 @@ function CreateUser() {
     }
     dispatch(addToUsers(newUser));
     toast.success(`New user add 👍`)
-    toast.warning(newUser.createdAt)
     inputReset()  
   }
 
